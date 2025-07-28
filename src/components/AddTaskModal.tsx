@@ -64,6 +64,17 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({
         dueDate: editingTask.dueDate
       }
       setFormData(editData)
+    } else if (!editingTask && show) {
+      const resetData = {
+        title: '',
+        description: '',
+        priority: Priority.MEDIUM,
+        category: Category.PERSONAL,
+        dueDate: undefined
+      }
+      setFormData(resetData)
+      setValidationState(resetData)
+      setErrors({})
     }
   }, [editingTask, show])
 

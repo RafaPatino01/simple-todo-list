@@ -82,7 +82,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onDelete, onEdit })
     return { status: 'upcoming', variant: 'secondary', icon: Calendar }
   }
 
-  const CategoryIcon = categoryIcons[todo.category]
+  const CategoryIcon = categoryIcons[todo.category] || ThreeDots
   const dueDateInfo = todo.dueDate ? getDueDateStatus(todo.dueDate) : null
 
   return (
@@ -115,13 +115,13 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onDelete, onEdit })
               
               <div className="d-flex align-items-center gap-2 flex-wrap">
                 <Badge bg={categoryColors[todo.category]} className="category-badge">
-                  <CategoryIcon size={12} className="me-1" />
+                  {React.createElement(CategoryIcon, { size: 12, className: "me-1" })}
                   {todo.category.charAt(0).toUpperCase() + todo.category.slice(1)}
                 </Badge>
                 
                 {todo.dueDate && dueDateInfo && (
                   <Badge bg={dueDateInfo.variant} className="due-date-badge">
-                    <dueDateInfo.icon size={12} className="me-1" />
+                    {React.createElement(dueDateInfo.icon, { size: 12, className: "me-1" })}
                     {formatDueDate(todo.dueDate)}
                   </Badge>
                 )}
