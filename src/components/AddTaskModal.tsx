@@ -93,22 +93,20 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({
   }
 
   const handleClose = () => {
-    if (!isEditing) {
-      setFormData({
-        title: '',
-        description: '',
-        priority: Priority.MEDIUM,
-        category: Category.PERSONAL,
-        dueDate: undefined
-      })
-      setValidationState({
-        title: '',
-        description: '',
-        priority: Priority.MEDIUM,
-        category: Category.PERSONAL,
-        dueDate: undefined
-      })
-    }
+    setFormData({
+      title: '',
+      description: '',
+      priority: Priority.MEDIUM,
+      category: Category.PERSONAL,
+      dueDate: undefined
+    })
+    setValidationState({
+      title: '',
+      description: '',
+      priority: Priority.MEDIUM,
+      category: Category.PERSONAL,
+      dueDate: undefined
+    })
     onHide()
   }
 
