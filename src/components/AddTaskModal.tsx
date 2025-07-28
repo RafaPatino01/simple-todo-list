@@ -67,6 +67,26 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({
     }
   }, [editingTask, show])
 
+  useEffect(() => {
+    if (show && !editingTask) {
+      setFormData({
+        title: '',
+        description: '',
+        priority: Priority.MEDIUM,
+        category: Category.PERSONAL,
+        dueDate: undefined
+      })
+      setValidationState({
+        title: '',
+        description: '',
+        priority: Priority.MEDIUM,
+        category: Category.PERSONAL,
+        dueDate: undefined
+      })
+      setErrors({})
+    }
+  }, [show, editingTask])
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
