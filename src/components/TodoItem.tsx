@@ -121,7 +121,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onDelete, onEdit })
                 
                 {todo.dueDate && dueDateInfo && (
                   <Badge bg={dueDateInfo.variant} className="due-date-badge">
-                    <dueDateInfo.icon size={12} className="me-1" />
                     {formatDueDate(todo.dueDate)}
                   </Badge>
                 )}

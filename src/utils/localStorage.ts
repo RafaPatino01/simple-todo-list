@@ -1,4 +1,3 @@
-import { Priority, Category } from '../types/Todo'
 import type { Todo } from '../types/Todo'
 
 const STORAGE_KEY = 'todo-app-todos'
