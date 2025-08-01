@@ -15,7 +15,7 @@
 }
 
 .max-width-container {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -178,15 +178,21 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1600px) {
+  .max-width-container {
+    max-width: 1600px;
+  }
+}
+
 @media (max-width: 1400px) {
   .max-width-container {
-    max-width: 1200px;
+    max-width: 1400px;
   }
 }
 
 @media (max-width: 1200px) {
   .max-width-container {
-    max-width: 900px;
+    max-width: 1000px;
   }
 }
 
